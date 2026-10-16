@@ -1,14 +1,14 @@
 name: Generate and Upload Artifact
 
-on: 
+on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   generate-file:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Run create_txt script
         run: python create_txt.py
